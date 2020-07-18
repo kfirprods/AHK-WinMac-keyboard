@@ -57,6 +57,9 @@ F15::SendInput {Pause}
 ; Finding
 !f::Send ^f
 
+; "Find All" in some code editors
+!+f::Send ^+f
+
 ; Undo
 !z::Send ^z
 
@@ -76,9 +79,9 @@ F15::SendInput {Pause}
 !m::WinMinimize,a
 
 ; Zoom in (cmd =)
-!VKBB::Send {Lctrl down}{=}{Lctrl up}
+;!VKBB::Send {Lctrl down}{=}{Lctrl up}
 ; Zoom out (cmd -)
-!VKBD::Send {Lctrl down}{-}{Lctrl up}
+;!VKBD::Send {Lctrl down}{-}{Lctrl up}
 
 ; cmd+arrow navigation
 !Up::Send {Lctrl down}{Home}{Lctrl up}
@@ -112,6 +115,9 @@ F15::SendInput {Pause}
 !9::Send ^9
 !0::Send ^0
 
+
+; cmd+/ to comment a line of code
+!/::Send ^/
 
 ; --------------------------------------------------------------
 ; Application specific
