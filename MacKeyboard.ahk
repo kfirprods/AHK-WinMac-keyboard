@@ -126,18 +126,40 @@ F15::SendInput {Pause}
 ; Google Chrome
 #IfWinActive, ahk_class Chrome_WidgetWin_1
 
-; Show Web Developer Tools with cmd + alt + i
-#!i::Send {F12}
+  ; Show Web Developer Tools with cmd + alt + i
+  #!i::Send {F12}
 
-; Show source code with cmd + alt + u
-#!u::Send ^u
+  ; Show source code with cmd + alt + u
+  #!u::Send ^u
 
-; Incognito
-!+n::Send ^+n
+  ; Incognito
+  !+n::Send ^+n
 
-; Go to address bar
-!l::Send !d
+  ; Go to address bar
+  !l::Send !d
 
-; TODO: go to history, go to downloads, etc...
+  ; TODO: go to history, go to downloads, etc...
 
+#IfWinActive
+
+; Windows Explorer
+#IfWinActive ahk_class CabinetWClass
+  ; cmd+up to go back one folder
+  !Up::Send {LAlt down}{Left}{LAlt up}
+  ; cmd+down to go into selected folder
+  !Down::Send {Enter}
+
+  ; Edit file/folder name by hitting Enter
+  Enter::
+    ; If not already editing, hit F2 to go into edit mode
+    if (!A_CaretX)
+    {
+      Send {F2} 
+    }
+    ; Otherwise, send enter to finish editing
+    else {
+      Send {Enter}
+    }
+    return
+  
 #IfWinActive
