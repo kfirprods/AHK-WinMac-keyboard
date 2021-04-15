@@ -115,9 +115,14 @@ F15::SendInput {Pause}
 !9::Send ^9
 !0::Send ^0
 
-
 ; cmd+/ to comment a line of code
 !/::Send ^/
+
+; --------------------------------------------------------------
+; Mouse shortcuts
+; --------------------------------------------------------------
+; Control + Click to simulate right-click
+^LButton::RButton
 
 ; --------------------------------------------------------------
 ; Application specific
